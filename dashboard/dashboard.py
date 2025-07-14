@@ -8,14 +8,14 @@ import os
 
 
 # Membaca semua dataset
-customers_dataset_df = pd.read_csv("https://raw.githubusercontent.com/yhyudha/analisis-data/main/data/customers_dataset.csv")
-order_items_dataset_df = pd.read_csv("https://raw.githubusercontent.com/yhyudha/analisis-data/main/data/order_items_dataset.csv")
-order_payments_dataset_df = pd.read_csv("https://raw.githubusercontent.com/yhyudha/analisis-data/main/data/order_payments_dataset.csv")
-order_reviews_dataset_df = pd.read_csv("https://raw.githubusercontent.com/yhyudha/analisis-data/main/data/order_reviews_dataset.csv")
-orders_dataset_df = pd.read_csv("https://raw.githubusercontent.com/yhyudha/analisis-data/main/data/orders_dataset.csv")
-product_category_name_translation_df = pd.read_csv("https://raw.githubusercontent.com/yhyudha/analisis-data/main/data/product_category_name_translation.csv")
-products_dataset_df = pd.read_csv("https://raw.githubusercontent.com/yhyudha/analisis-data/main/data/products_dataset.csv")
-sellers_dataset_df = pd.read_csv("https://raw.githubusercontent.com/yhyudha/analisis-data/main/data/sellers_dataset.csv")
+customers_dataset_df = pd.read_csv("https://raw.githubusercontent.com/yhyudha/Proyek-analisis-data/main/data/customers_dataset.csv")
+order_items_dataset_df = pd.read_csv("https://raw.githubusercontent.com/yhyudha/Proyek-analisis-data/main/data/order_items_dataset.csv")
+order_payments_dataset_df = pd.read_csv("https://raw.githubusercontent.com/yhyudha/Proyek-analisis-data/main/data/order_payments_dataset.csv")
+order_reviews_dataset_df = pd.read_csv("https://raw.githubusercontent.com/yhyudha/Proyek-analisis-data/main/data/order_reviews_dataset.csv")
+orders_dataset_df = pd.read_csv("https://raw.githubusercontent.com/yhyudha/Proyek-analisis-data/main/data/orders_dataset.csv")
+product_category_name_translation_df = pd.read_csv("https://raw.githubusercontent.com/yhyudha/Proyek-analisis-data/main/data/product_category_name_translation.csv")
+products_dataset_df = pd.read_csv("https://raw.githubusercontent.com/yhyudha/Proyek-analisis-data/main/data/products_dataset.csv")
+sellers_dataset_df = pd.read_csv("https://raw.githubusercontent.com/yhyudha/Proyek-analisis-data/main/data/sellers_dataset.csv")
 
 # Menampilkan 5 baris pertama dari setiap dataset (opsional, untuk cek)
 print(customers_dataset_df.head())
