@@ -40,6 +40,8 @@ Project ini merupakan dashboard interaktif yang digunakan untuk menganalisis dat
     ```
 4. Dashboard akan terbuka otomatis di browser Anda.
 
+5. ini ada lah link untuk steamlit app, https://projectyhyudha.streamlit.app/
+
 ---
 
 ## Dependensi
