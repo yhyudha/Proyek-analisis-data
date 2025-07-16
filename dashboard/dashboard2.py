@@ -6,7 +6,8 @@ from babel.numbers import format_currency
 
 
 # Path relatif dari script Streamlit ke folder data
-data_dir = '../data/'  # Jika dashboard.py ada di folder dashboard/
+data_dir = '../data/'
+print("Isi folder data:", os.listdir(data_dir))
 
 # Load seluruh dataset
 order_payments_dataset_df = pd.read_csv(data_dir + 'order_payments_dataset.csv')
