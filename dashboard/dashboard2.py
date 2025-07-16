@@ -5,49 +5,19 @@ import streamlit as st
 from babel.numbers import format_currency
 
 
-# Mount Google Drive
-from google.colab import drive
-drive.mount('/content/drive')
+# Path relatif dari script Streamlit ke folder data
+data_dir = '../data/'  # Jika dashboard.py ada di folder dashboard/
 
-# Path folder data di Google Drive Anda
-data_dir = '/content/drive/MyDrive/Colab Notebooks/Tugas YH Yudha - Proyek Analisis Data/data/'
+# Load seluruh dataset
+order_payments_dataset_df = pd.read_csv(data_dir + 'order_payments_dataset.csv')
+order_items_dataset_df = pd.read_csv(data_dir + 'order_items_dataset.csv')
+orders_dataset_df = pd.read_csv(data_dir + 'orders_dataset.csv')
+order_reviews_dataset_df = pd.read_csv(data_dir + 'order_reviews_dataset.csv')
+sellers_dataset_df = pd.read_csv(data_dir + 'sellers_dataset.csv')
+customers_dataset_df = pd.read_csv(data_dir + 'customers_dataset.csv')
+product_category_name_translation_df = pd.read_csv(data_dir + 'product_category_name_translation.csv')
+products_dataset_df = pd.read_csv(data_dir + 'products_dataset.csv')
 
-# Daftar nama file csv yang ingin dibaca
-csv_files = [
-    'order_payments_dataset.csv',
-    'order_items_dataset.csv',
-    'orders_dataset.csv',
-    'order_reviews_dataset.csv',
-    'sellers_dataset.csv',
-    'customers_dataset.csv',
-    'product_category_name_translation.csv',
-    'products_dataset.csv'
-]
-
-# Membaca semua file dan simpan ke dictionary
-import pandas as pd
-dfs = {}
-
-for file in csv_files:
-    file_path = data_dir + file
-    try:
-        df = pd.read_csv(file_path)
-        dfs[file] = df
-        print(f"✅ Berhasil memuat {file} dari path: {file_path}")
-    except FileNotFoundError:
-        print(f"❌ Error: File {file} tidak ditemukan di path: {file_path}")
-    except Exception as e:
-        print(f"❌ Terjadi error lain saat memuat {file}: {e}")
-
-# Contoh akses dataframe
-order_payments_dataset_df = dfs['order_payments_dataset.csv']
-order_items_dataset_df = dfs['order_items_dataset.csv']
-orders_dataset_df = dfs['orders_dataset.csv']
-order_reviews_dataset = dfs['order_reviews_dataset.csv']
-sellers_dataset_df = dfs['sellers_dataset.csv']
-customers_dataset_df = dfs['customers_dataset.csv']
-product_category_name_translation_df = dfs['product_category_name_translation.csv']
-products_dataset_df = dfs['products_dataset.csv']
 # Cek head
 print(orders_dataset_df.head())
 
