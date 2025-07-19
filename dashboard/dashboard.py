@@ -8,7 +8,7 @@ from babel.numbers import format_currency
 
 st.write("Current working directory:", os.getcwd())
 try:
-    st.write("Isi ../data:", os.listdir('./data/'))
+    st.write("Isi ./data:", os.listdir('./data/'))
 except Exception as e:
     st.error(f"Gagal membaca isi ./data/: {e}")
 # Load dataset
