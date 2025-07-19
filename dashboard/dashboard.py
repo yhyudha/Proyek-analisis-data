@@ -3,7 +3,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from babel.numbers import format_currency
-
+import os
+st.write("Current working directory:", os.getcwd())
+st.write("Isi ../data:", os.listdir('../data/'))
 data_dir = '../data/'
 
 # Load dataset
