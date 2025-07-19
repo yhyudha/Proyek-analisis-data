@@ -7,30 +7,40 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from babel.numbers import format_currency
 
-st.write("Current working directory:", os.getcwd())
-try:
-    st.write("Isi ../data:", os.listdir('../data/'))
-except Exception as e:
-    st.error(f"Gagal membaca isi ../data/: {e}")
-# Load dataset
-@st.cache_data
-def load_data():
-    dfs = {}
-    csv_files = [
-        'order_payments_dataset.csv',
-        'order_items_dataset.csv',
-        'orders_dataset.csv',
-        'order_reviews_dataset.csv',
-        'sellers_dataset.csv',
-        'customers_dataset.csv',
-        'product_category_name_translation.csv',
-        'products_dataset.csv'
-    ]
-    for file in csv_files:
-        dfs[file] = pd.read_csv(data_dir + file)
-    return dfs
+# Mount Google Drive
+from google.colab import drive
+drive.mount('/content/drive')
 
-dfs = load_data()
+# Path folder data di Google Drive Anda
+data_dir = '/content/drive/MyDrive/Colab Notebooks/Tugas YH Yudha - Proyek Analisis Data/data/'
+
+# Daftar nama file csv yang ingin dibaca
+csv_files = [
+    'order_payments_dataset.csv',
+    'order_items_dataset.csv',
+    'orders_dataset.csv',
+    'order_reviews_dataset.csv',
+    'sellers_dataset.csv',
+    'customers_dataset.csv',
+    'product_category_name_translation.csv',
+    'products_dataset.csv'
+]
+
+# Membaca semua file dan simpan ke dictionary
+import pandas as pd
+dfs = {}
+
+for file in csv_files:
+    file_path = data_dir + file
+    try:
+        df = pd.read_csv(file_path)
+        dfs[file] = df
+        print(f"✅ Berhasil memuat {file} dari path: {file_path}")
+    except FileNotFoundError:
+        print(f"❌ Error: File {file} tidak ditemukan di path: {file_path}")
+    except Exception as e:
+        print(f"❌ Terjadi error lain saat memuat {file}: {e}")
+
 order_payments_dataset_df = dfs['order_payments_dataset.csv']
 order_items_dataset_df = dfs['order_items_dataset.csv']
 orders_dataset_df = dfs['orders_dataset.csv']
