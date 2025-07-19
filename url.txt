@@ -1,1 +1,1 @@
-https://projectyhyudha.streamlit.app/
+https://dashboardpy-yhyudha.streamlit.app/
