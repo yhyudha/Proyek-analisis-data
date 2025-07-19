@@ -11,6 +11,9 @@ try:
     st.write("Isi ./data:", os.listdir('./data/'))
 except Exception as e:
     st.error(f"Gagal membaca isi ./data/: {e}")
+
+data_dir = './data/'
+
 # Load dataset
 @st.cache_data
 def load_data():
