@@ -6,12 +6,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from babel.numbers import format_currency
 
-st.write("Current working directory:", os.getcwd())
-try:
-    st.write("Isi ./data:", os.listdir('./data/'))
-except Exception as e:
-    st.error(f"Gagal membaca isi ./data/: {e}")
-
 data_dir = './data/'
 
 # Load dataset
